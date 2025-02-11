@@ -15,5 +15,19 @@
       const app = Vue.createApp(App);
       app.mount("#app");
     </script>
+    <!-- <div id="app">
+      <input type="text" v-model="name" />
+      <input type="text" :value="name" @input="name=$event.target.value" />
+    </div>
+
+    <script>
+      Vue.createApp({
+        data() {
+          return {
+            name: "",
+          };
+        },
+      }).mount("#app");
+    </script> -->
   </body>
 </html>
