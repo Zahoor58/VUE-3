@@ -12,16 +12,16 @@ export default {
   `,
   data() {
     return {
-      assignments: [
-        { id: 1, name: "Assignment 1", complete: false, tag: "math" },
-        { id: 2, name: "Assignment 2", complete: false, tag: "math" },
-        { id: 3, name: "Assignment 3", complete: false, tag: "scenics" },
-        { id: 4, name: "Assignment 4", complete: false, tag: "scenics" },
-        { id: 5, name: "Assignment 5", complete: false, tag: "reading" },
-      ],
+      assignments: [],
     };
   },
-
+  created() {
+    fetch("http://localhost:4000/assignments")
+      .then((response) => response.json())
+      .then((assignments) => {
+        this.assignments = assignments;
+      });
+  },
   computed: {
     filters() {
       return {
